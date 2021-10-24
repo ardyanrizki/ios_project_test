@@ -40,7 +40,6 @@ class CarouselViewController: UIViewController, UICollectionViewDelegate, UIColl
                                 image = media.url ?? ""
                             }
                         }
-                        
                     }
                     return NewsCollectionViewCellModel(
                         title: $0.title,

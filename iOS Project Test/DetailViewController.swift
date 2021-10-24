@@ -35,6 +35,8 @@ class DetailViewController: UIViewController {
                     self.newsImage.image = UIImage(data: data)
                 }
             }
+        } else {
+            self.newsImage.image = UIImage(named: "fallback_img")
         }
     }
     
