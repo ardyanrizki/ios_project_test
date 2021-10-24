@@ -30,7 +30,6 @@ final class NewsArticleAPI {
                 do {
                     let decoded = try JSONDecoder().decode(News.self, from: data)
                     
-                    print("Articles: \(decoded)")
                     completion(.success(decoded.results))
                 }
                 catch {

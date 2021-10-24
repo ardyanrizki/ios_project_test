@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D316DAF327231858000C2FE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316DAF227231858000C2FE9 /* AppDelegate.swift */; };
 		D316DAF527231858000C2FE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316DAF427231858000C2FE9 /* SceneDelegate.swift */; };
-		D316DAF727231858000C2FE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316DAF627231858000C2FE9 /* ViewController.swift */; };
+		D316DAF727231858000C2FE9 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316DAF627231858000C2FE9 /* CarouselViewController.swift */; };
 		D316DAFA27231858000C2FE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D316DAF827231858000C2FE9 /* Main.storyboard */; };
 		D316DAFC27231859000C2FE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D316DAFB27231859000C2FE9 /* Assets.xcassets */; };
 		D316DAFF27231859000C2FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D316DAFD27231859000C2FE9 /* LaunchScreen.storyboard */; };
@@ -20,6 +20,8 @@
 		D316DB2827231C80000C2FE9 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316DB2727231C80000C2FE9 /* NewsModel.swift */; };
 		D316DB2B2723B3BB000C2FE9 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316DB292723B3BB000C2FE9 /* NewsCollectionViewCell.swift */; };
 		D316DB2C2723B3BB000C2FE9 /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316DB2A2723B3BB000C2FE9 /* NewsCollectionViewCell.xib */; };
+		D388546927257EFF00C71622 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388546827257EFF00C71622 /* UPCarouselFlowLayout.swift */; };
+		D388546B27257F7400C71622 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388546A27257F7400C71622 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,7 @@
 		D316DAEF27231858000C2FE9 /* iOS Project Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Project Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D316DAF227231858000C2FE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D316DAF427231858000C2FE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D316DAF627231858000C2FE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D316DAF627231858000C2FE9 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		D316DAF927231858000C2FE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D316DAFB27231859000C2FE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D316DAFE27231859000C2FE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +59,8 @@
 		D316DB2727231C80000C2FE9 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		D316DB292723B3BB000C2FE9 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D316DB2A2723B3BB000C2FE9 /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
+		D388546827257EFF00C71622 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
+		D388546A27257F7400C71622 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +116,15 @@
 				D316DB2227231A75000C2FE9 /* Models */,
 				D316DAF227231858000C2FE9 /* AppDelegate.swift */,
 				D316DAF427231858000C2FE9 /* SceneDelegate.swift */,
-				D316DAF627231858000C2FE9 /* ViewController.swift */,
+				D316DAF627231858000C2FE9 /* CarouselViewController.swift */,
 				D316DAF827231858000C2FE9 /* Main.storyboard */,
 				D316DAFB27231859000C2FE9 /* Assets.xcassets */,
 				D316DAFD27231859000C2FE9 /* LaunchScreen.storyboard */,
 				D316DB0027231859000C2FE9 /* Info.plist */,
 				D316DB292723B3BB000C2FE9 /* NewsCollectionViewCell.swift */,
 				D316DB2A2723B3BB000C2FE9 /* NewsCollectionViewCell.xib */,
+				D388546827257EFF00C71622 /* UPCarouselFlowLayout.swift */,
+				D388546A27257F7400C71622 /* DetailViewController.swift */,
 			);
 			path = "iOS Project Test";
 			sourceTree = "<group>";
@@ -295,12 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D316DAF727231858000C2FE9 /* ViewController.swift in Sources */,
+				D316DAF727231858000C2FE9 /* CarouselViewController.swift in Sources */,
 				D316DB2B2723B3BB000C2FE9 /* NewsCollectionViewCell.swift in Sources */,
 				D316DB2627231AB2000C2FE9 /* NewsArticleAPI.swift in Sources */,
 				D316DAF327231858000C2FE9 /* AppDelegate.swift in Sources */,
 				D316DAF527231858000C2FE9 /* SceneDelegate.swift in Sources */,
 				D316DB2827231C80000C2FE9 /* NewsModel.swift in Sources */,
+				D388546927257EFF00C71622 /* UPCarouselFlowLayout.swift in Sources */,
+				D388546B27257F7400C71622 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
