@@ -11,11 +11,18 @@ class CarouselViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var newsCollectionView: UICollectionView!
     
+    @IBOutlet weak var loadingProgresBar: UIProgressView!
+    @IBOutlet weak var loadingStackView: UIStackView!
+    @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
+    
     private var viewModels = [NewsCollectionViewCellModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Popular News"
+        loadingActivityIndicator.startAnimating()
+        loadingProgresBar.isHidden = true
+        loadingProgresBar.progress = 0
         newsCollectionView.register(UINib.init(nibName: "NewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsCollectionViewCell")
         
         let flowLayout = UPCarouselFlowLayout()
@@ -42,6 +49,7 @@ class CarouselViewController: UIViewController, UICollectionViewDelegate, UIColl
                         }
                     }
                     return NewsCollectionViewCellModel(
+                        id: $0.id ?? 0,
                         title: $0.title,
                         abstract: $0.abstract ?? "No abstract",
                         imageURL: URL(string: image)
@@ -49,6 +57,7 @@ class CarouselViewController: UIViewController, UICollectionViewDelegate, UIColl
                 })
 
                 DispatchQueue.main.async {
+                    self?.loadingStackView.isHidden = true
                     self?.newsCollectionView.reloadData()
                 }
             case .failure(let error):
@@ -57,7 +66,7 @@ class CarouselViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-    //MARK:- UICollectionVIew Delegates and DataSource
+    //MARK: - UICollectionVIew Delegates and DataSource
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return viewModels.count
     }

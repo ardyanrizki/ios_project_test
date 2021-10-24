@@ -14,6 +14,19 @@ class DetailViewController: UIViewController {
     
     var model: NewsCollectionViewCellModel?
     
+    @IBAction func shareButtonPressed(_ sender: UIButton) {
+        let articleTitle = model?.id
+        let urlScheme = "ios-project-test://page=\(articleTitle ?? 0)"
+        
+        guard let url = URL(string: urlScheme) else {
+            return
+        }
+        
+        let shareSheetVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        
+        present(shareSheetVC, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
