@@ -7,26 +7,6 @@
 
 import UIKit
 
-class NewsCollectionViewCellModel {
-    let id: Int
-    let title: String
-    let abstract: String
-    let imageURL: URL?
-    let imageData: Data? = nil
-    
-    init (
-        id: Int,
-        title: String,
-        abstract: String,
-        imageURL: URL?
-    ) {
-        self.id = id
-        self.title = title
-        self.abstract = abstract
-        self.imageURL = imageURL
-    }
-}
-
 class NewsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var newsTitle: UILabel!

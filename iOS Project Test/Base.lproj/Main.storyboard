@@ -42,7 +42,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qno-JC-DkV">
-                                <rect key="frame" x="0.0" y="190" width="414" height="522"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="574"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BLS-yi-CZ7">
                                     <size key="itemSize" width="50" height="50"/>
@@ -112,16 +112,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erB-qM-JNl">
-                                <rect key="frame" x="8" y="792" width="398" height="40"/>
+                                <rect key="frame" x="8" y="812" width="398" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="S0j-Rt-UXh"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Share">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="shareButtonPressed:" destination="F1I-dB-tkN" eventType="touchUpInside" id="8bq-ws-t8E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15U-yh-dd8">
+                                <rect key="frame" x="8" y="762" width="398" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VQy-4I-3mo"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save as Favorite">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="F1I-dB-tkN" eventType="touchUpInside" id="fPA-jF-jTk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -131,14 +146,17 @@
                             <constraint firstAttribute="trailing" secondItem="Zaw-r4-t1Q" secondAttribute="trailing" constant="8" id="5Os-hR-Qnd"/>
                             <constraint firstItem="CMh-GG-bvn" firstAttribute="leading" secondItem="28G-ht-WiH" secondAttribute="leading" id="5hs-78-ewD"/>
                             <constraint firstItem="CMh-GG-bvn" firstAttribute="trailing" secondItem="28G-ht-WiH" secondAttribute="trailing" id="Hby-4C-HUD"/>
+                            <constraint firstItem="28G-ht-WiH" firstAttribute="trailing" secondItem="15U-yh-dd8" secondAttribute="trailing" constant="8" id="JGI-Kg-nWT"/>
                             <constraint firstItem="Zaw-r4-t1Q" firstAttribute="leading" secondItem="DqZ-HP-Muq" secondAttribute="leading" constant="8" id="LW1-dB-2Gy"/>
+                            <constraint firstItem="15U-yh-dd8" firstAttribute="leading" secondItem="28G-ht-WiH" secondAttribute="leading" constant="8" id="LiL-jg-xK4"/>
                             <constraint firstItem="Zaw-r4-t1Q" firstAttribute="top" secondItem="5WL-sV-vWD" secondAttribute="bottom" constant="30" id="QyL-oY-yab"/>
                             <constraint firstItem="28G-ht-WiH" firstAttribute="trailing" secondItem="erB-qM-JNl" secondAttribute="trailing" constant="8" id="XYt-Bd-ZQd"/>
                             <constraint firstItem="5WL-sV-vWD" firstAttribute="leading" secondItem="DqZ-HP-Muq" secondAttribute="leading" constant="8" id="c0G-VE-MyT"/>
                             <constraint firstItem="CMh-GG-bvn" firstAttribute="top" secondItem="28G-ht-WiH" secondAttribute="top" id="cO4-5c-XGe"/>
                             <constraint firstAttribute="trailing" secondItem="5WL-sV-vWD" secondAttribute="trailing" constant="8" id="e2D-KX-Ozo"/>
+                            <constraint firstItem="erB-qM-JNl" firstAttribute="top" secondItem="15U-yh-dd8" secondAttribute="bottom" constant="10" id="ray-Me-ZUw"/>
                             <constraint firstItem="erB-qM-JNl" firstAttribute="leading" secondItem="28G-ht-WiH" secondAttribute="leading" constant="8" id="sRu-v5-uOv"/>
-                            <constraint firstItem="28G-ht-WiH" firstAttribute="bottom" secondItem="erB-qM-JNl" secondAttribute="bottom" constant="30" id="wA7-4c-cTy"/>
+                            <constraint firstItem="28G-ht-WiH" firstAttribute="bottom" secondItem="erB-qM-JNl" secondAttribute="bottom" constant="10" id="wA7-4c-cTy"/>
                             <constraint firstItem="5WL-sV-vWD" firstAttribute="top" secondItem="CMh-GG-bvn" secondAttribute="bottom" constant="30" id="y1v-Tq-3ke"/>
                         </constraints>
                     </view>
@@ -157,8 +175,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Mt-1g-GCD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="W3b-AI-9lA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W3b-AI-9lA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
