@@ -27,8 +27,6 @@ class NewsArticleAPI: NSObject, URLSessionDownloadDelegate {
         
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
         
-//        session.downloadTask(with: url).resume()
-        
         let task = session.dataTask(with: url) { data, mid, error in
             if let error = error {
                 completion(.failure(error))

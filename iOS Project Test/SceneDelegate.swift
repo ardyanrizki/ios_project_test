@@ -20,14 +20,57 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        print(URLContexts.first?.url ?? "nil")
-        
-        if let url = URLContexts.first?.url {
-            let urlString = url.absoluteString
-            let component = urlString.components(separatedBy: "=")
-            
-            let detailPageVC = DetailViewController()
+        guard let url = URLContexts.first?.url else {
+          return
         }
+        
+        let urlString = url.absoluteString
+        let articleId = urlString.components(separatedBy: "=")[1]
+        
+        var viewModels = [NewsCollectionViewCellModel]()
+
+        NewsArticleAPI.shared.getMostViewed { [weak self] result in
+            switch result {
+            case .success(let articles):
+                viewModels = articles.compactMap({
+                    var image = ""
+                    if $0.media.count > 0 {
+                        for media in $0.media[0]?.mediaMetadata ?? [] {
+                            if media.format == "mediumThreeByTwo440" {
+                                image = media.url ?? ""
+                            }
+                        }
+                    }
+                    return NewsCollectionViewCellModel(
+                        id: $0.id ?? 0,
+                        title: $0.title,
+                        abstract: $0.abstract ?? "No abstract",
+                        imageURL: URL(string: image)
+                    )
+                })
+
+                DispatchQueue.main.async {
+                    let article = viewModels.filter { $0.id == Int(articleId) }
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    guard let selectedVC = storyboard.instantiateViewController(withIdentifier: "detail_vc") as? DetailViewController else {
+                        return
+                    }
+                    selectedVC.model = article[0]
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(selectedVC)
+
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else {
+            return
+        }
+        window.rootViewController = vc
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
