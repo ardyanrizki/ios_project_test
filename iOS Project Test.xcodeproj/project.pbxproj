@@ -158,6 +158,8 @@
 				D316DB2427231A8D000C2FE9 /* ViewModels */,
 				D316DB2227231A75000C2FE9 /* Models */,
 				D316DAFB27231859000C2FE9 /* Assets.xcassets */,
+				D316DAF827231858000C2FE9 /* Main.storyboard */,
+				D316DAFD27231859000C2FE9 /* LaunchScreen.storyboard */,
 				D316DB0027231859000C2FE9 /* Info.plist */,
 			);
 			path = "iOS Project Test";
@@ -226,8 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				D316DB292723B3BB000C2FE9 /* NewsCollectionViewCell.swift */,
-				D316DAF827231858000C2FE9 /* Main.storyboard */,
-				D316DAFD27231859000C2FE9 /* LaunchScreen.storyboard */,
 				D316DB2A2723B3BB000C2FE9 /* NewsCollectionViewCell.xib */,
 			);
 			path = Views;
